@@ -110,8 +110,7 @@ public class MeetingRestController {
             participantToAdd.setLogin(login);
             participantToAdd = participantService.add(participantToAdd);
         }
-
-            currentMeeting.addParticipant(participantToAdd);
+        currentMeeting.addParticipant(participantToAdd);
         meetingService.update(currentMeeting);
 
         return new ResponseEntity<Collection<Participant>>(currentMeeting.getParticipants(), HttpStatus.OK);
